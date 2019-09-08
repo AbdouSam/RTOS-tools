@@ -43,7 +43,7 @@ import numpy as np
 w, h = 15, 7200;
 
 
-plot_arry_size = 20  # lines to read
+plot_arry_size = 500  # lines to read
 plot_arry_start = 0  # offset to display 
 task_states = np.zeros([w,h])
 time_x = []
@@ -109,7 +109,6 @@ def main():
 
     try:
       task_tag = re.search('\\] (.+?)', x).group(1)
-      prin(str(task_tag))
 
       for ii in range(15):
 
@@ -127,6 +126,7 @@ def main():
       task_tag = '00'
       print("Error Tag")
       quit()
+      
     millisec = date_timestamp.timestamp() * 1000 - time_start
     time_x.append(millisec)
 
